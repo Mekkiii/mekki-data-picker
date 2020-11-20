@@ -1,38 +1,38 @@
 <template>
-  <a-config-provider :locale="zhCN">
-    <div id="app">
-      <mekkiDataPicker></mekkiDataPicker>
-      <tippy
-        to="tippy01"
-        @init="onTippyInit"
-        @hidden="onHidden"
-        interactive="true"
-        theme="light"
-        :distance="20"
-        watch-props="true"
-      >
-        <div>
-          Can coffee make you a better developer?
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Voluptatibus quia, nulla!
-          Maiores et perferendis eaque, exercitationem praesentium nihil.
-        </p>
+  <!-- <a-config-provider :locale="zhCN"> -->
+  <div id="app">
+    <mekkiDataPicker></mekkiDataPicker>
+    <tippy
+      to="tippy01"
+      @init="onTippyInit"
+      @hidden="onHidden"
+      interactive="true"
+      theme="light"
+      :distance="20"
+      watch-props="true"
+    >
+      <div>
+        Can coffee make you a better developer?
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Voluptatibus quia, nulla!
+        Maiores et perferendis eaque, exercitationem praesentium nihil.
+      </p>
 
-        <p> Timer: { { timer } } </p>
+      <p> Timer: { { timer } } </p>
 
-        <button @click="timer +=3">
-          Increase
-        </button>
-
-      </tippy>
-
-      <button name="tippy01">
-        Click Me
+      <button @click="timer +=3">
+        Increase
       </button>
-    </div>
-  </a-config-provider>
+
+    </tippy>
+
+    <button name="tippy01">
+      Click Me
+    </button>
+  </div>
+  <!-- </a-config-provider> -->
 </template>
 
 <script>

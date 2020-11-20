@@ -1,115 +1,100 @@
 <template>
-  <a-popover
-    :disabled="true"
-    v-model="visible"
-    trigger="click"
-    placement="bottom"
-    overlayClassName="arcana-date-picker-popover"
-    @visibleChange="visibleChange"
-  >
-    <!-- <div>
-    <tippy
-      to="tippy01"
-      @init="onTippyInit"
-      @hidden="onHidden"
-      interactive="true"
-      theme="light"
-      :distance="20"
-      watch-props="true"
-    > -->
-
-    <template slot="content">
-      <a-card
-        ref="time-card"
-        class="arcana-date-picker-box"
-        :bordered="false"
-      >
-        <a-collapse
-          v-model="activeKey"
-          accordion
-          expandIconPosition="right"
+  <a-config-provider :locale="zhCN">
+    <a-popover
+      :disabled="true"
+      v-model="visible"
+      trigger="click"
+      placement="bottom"
+      overlayClassName="arcana-date-picker-popover"
+      @visibleChange="visibleChange"
+    >
+      <template slot="content">
+        <a-card
+          ref="time-card"
+          class="arcana-date-picker-box"
+          :bordered="false"
         >
-          <template #expandIcon="props">
-            <a-icon
-              type="caret-right"
-              :rotate="props.isActive ? 90 : -90"
-            />
-          </template>
-          <template v-for="type in items">
-            <template v-if="type == 'preset'">
-              <a-collapse-panel
-                header="预设"
-                :key="type"
-              >
-                <preset-time
-                  @change="timeChange"
-                  ref="preset"
-                ></preset-time>
-              </a-collapse-panel>
+          <a-collapse
+            v-model="activeKey"
+            accordion
+            expandIconPosition="right"
+          >
+            <template #expandIcon="props">
+              <a-icon
+                type="caret-right"
+                :rotate="props.isActive ? 90 : -90"
+              />
             </template>
-            <template v-else-if="type == 'real'">
-              <a-collapse-panel
-                header="实时"
-                :key="type"
-              >
-                <real-time
-                  @change="timeChange"
-                  ref="real"
-                ></real-time>
-              </a-collapse-panel>
+            <template v-for="type in items">
+              <template v-if="type == 'preset'">
+                <a-collapse-panel
+                  header="预设"
+                  :key="type"
+                >
+                  <preset-time
+                    @change="timeChange"
+                    ref="preset"
+                  ></preset-time>
+                </a-collapse-panel>
+              </template>
+              <template v-else-if="type == 'real'">
+                <a-collapse-panel
+                  header="实时"
+                  :key="type"
+                >
+                  <real-time
+                    @change="timeChange"
+                    ref="real"
+                  ></real-time>
+                </a-collapse-panel>
+              </template>
+              <template v-else-if="type == 'relative'">
+                <a-collapse-panel
+                  header="相对时间"
+                  :key="type"
+                >
+                  <relative-time
+                    @change="timeChange"
+                    ref="relative"
+                  ></relative-time>
+                </a-collapse-panel>
+              </template>
+              <template v-else-if="type == 'absolute'">
+                <a-collapse-panel
+                  header="绝对时间"
+                  :key="type"
+                >
+                  <absolute-time
+                    @change="timeChange"
+                    ref="absolute"
+                  ></absolute-time>
+                </a-collapse-panel>
+              </template>
             </template>
-            <template v-else-if="type == 'relative'">
-              <a-collapse-panel
-                header="相对时间"
-                :key="type"
-              >
-                <relative-time
-                  @change="timeChange"
-                  ref="relative"
-                ></relative-time>
-              </a-collapse-panel>
-            </template>
-            <template v-else-if="type == 'absolute'">
-              <a-collapse-panel
-                header="绝对时间"
-                :key="type"
-              >
-                <absolute-time
-                  @change="timeChange"
-                  ref="absolute"
-                ></absolute-time>
-              </a-collapse-panel>
-            </template>
-          </template>
-        </a-collapse>
-      </a-card>
-    </template>
-    <slot name="content">
-      <div
-        class="time-content"
-        :title="labelText"
-      >
-        {{ labelText }}
-        <a-icon
-          type="caret-down"
-          class="arcana-date-arrow"
-        />
-      </div>
-    </slot>
-    <!-- </tippy>
-    <button name="tippy01">
-      Click Me
-    </button>
-  </div> -->
-  </a-popover>
+          </a-collapse>
+        </a-card>
+      </template>
+      <slot name="content">
+        <div
+          class="time-content"
+          :title="labelText"
+        >
+          {{ labelText }}
+          <a-icon
+            type="caret-down"
+            class="arcana-date-arrow"
+          />
+        </div>
+      </slot>
+    </a-popover>
+  </a-config-provider>
 </template>
 
 <script>
-import Vue from "vue";
-import VueTippy, { TippyComponent } from "vue-tippy";
-
-Vue.use(VueTippy);
-Vue.component("tippy", TippyComponent);
+import zhCN from "ant-design-vue/es/locale/zh_CN";
+import moment from "moment";
+import "moment/locale/zh-cn";
+moment.locale("en");
 import PresetTime from "./preset-time";
 import RelativeTime from "./relative-time";
 import AbsoluteTime from "./absolute-time";
@@ -133,6 +118,7 @@ export default {
   },
   data() {
     return {
+      zhCN,
       activeKey: "",
       timeValue: this.value,
       visible: false,
