@@ -1,6 +1,6 @@
 {
   "name": "mekki-data-picker",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "data-picker封装插件",
   "main": "lib/mekki-data-picker.umd.min.js",
