@@ -1,23 +1,35 @@
 {
   "name": "mekki-time-picker",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "private": false,
+  "description": "time-picker封装插件",
+  "main": "lib/mekki-time-picker.umd.min.js",
+  "keyword": "vue time picker",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name mekki-time-picker --dest lib packages/index.js"
   },
   "dependencies": {
+    "ant-design-vue": "^1.7.2",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "moment": "^2.29.1",
+    "tippy.js": "^6.2.7",
+    "vue": "^2.6.11",
+    "vue-tippy": "^4.7.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "less": "^3.12.2",
+    "less-loader": "^5.0.0",
+    "css-loader": "^5.0.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
