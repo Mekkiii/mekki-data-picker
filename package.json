@@ -1,15 +1,15 @@
 {
-  "name": "mekki-data-picker",
+  "name": "mekki-date-picker",
   "version": "0.1.4",
   "private": false,
-  "description": "data-picker封装插件",
-  "main": "lib/mekki-data-picker.umd.min.js",
-  "keyword": "vue data picker",
+  "description": "date-picker封装插件",
+  "main": "lib/mekki-date-picker.umd.min.js",
+  "keyword": "vue date picker",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name mekki-data-picker --dest lib packages/index.js"
+    "lib": "vue-cli-service build --target lib --name mekki-date-picker --dest lib packages/index.js"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.2",
