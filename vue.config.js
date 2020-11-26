@@ -32,7 +32,10 @@ module.exports = {
       less: {
         modifyVars: AntdCustomTheme,
         javascriptEnabled: true
+      },
+      css: {
+
       }
-    }
+    },
   },
 }

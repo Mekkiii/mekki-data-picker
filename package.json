@@ -1,6 +1,6 @@
 {
   "name": "mekki-date-picker",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "private": false,
   "description": "date-picker封装插件",
   "main": "lib/mekki-date-picker.umd.min.js",

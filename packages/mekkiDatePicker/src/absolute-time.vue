@@ -126,6 +126,7 @@ export default {
       } else {
         return false;
       }
+
     },
     //设置值
     setValue(startTime, endTime) {
@@ -197,9 +198,11 @@ export default {
   .custom-time-box {
     position: relative;
     .time-type {
+      text-align: left;
       margin-bottom: 8px;
       /deep/.ant-select {
         margin-right: 8px;
+        padding-left: 0;
         width: 110px;
         .ant-select-selection {
           border-radius: 2px;

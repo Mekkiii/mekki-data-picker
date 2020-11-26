@@ -1,8 +1,8 @@
-import mekkiDataPicker from './mekkiDataPicker'
+import mekkiDatePicker from './mekkiDatePicker'
 
 // 组件集合，用于遍历
 const components = [
-  mekkiDataPicker
+  mekkiDatePicker
 ]
 
 // 定义 install 方法
@@ -24,5 +24,5 @@ export default {
   // ...components, // 组件列表   
 }
 export {
-  mekkiDataPicker
+  mekkiDatePicker
 }

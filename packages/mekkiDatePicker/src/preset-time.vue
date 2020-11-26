@@ -26,7 +26,7 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() { },
 
   methods: {
     //点击tag事件
@@ -50,7 +50,9 @@ export default {
 </script>
 <style lang="less" scoped>
 .arcana-date-content {
+  text-align: left;
   .ant-tag {
+    text-align: left;
     margin-right: 8px;
     margin-bottom: 8px;
     font-size: 12px;

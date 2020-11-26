@@ -1,14 +1,20 @@
 <template>
   <a-config-provider :locale="zhCN">
-    <a-popover
-      :disabled="true"
-      v-model="visible"
-      trigger="click"
-      placement="bottom"
-      overlayClassName="arcana-date-picker-popover"
-      @visibleChange="visibleChange"
-    >
-      <template slot="content">
+    <div>
+      <tippy
+        to="tippy01"
+        v-model="visible"
+        interactive="true"
+        theme="light"
+        watch-props="true"
+        trigger="click"
+        max-width="368px"
+        allowHTML="true"
+        placement="bottom"
+        @hidden="visibleChange"
+        @show="visibleChange"
+        @visibleChange="visibleChange"
+      >
         <a-card
           ref="time-card"
           class="arcana-date-picker-box"
@@ -73,20 +79,20 @@
             </template>
           </a-collapse>
         </a-card>
-      </template>
-      <slot name="content">
-        <div
-          class="time-content"
-          :title="labelText"
-        >
-          {{ labelText }}
-          <a-icon
-            type="caret-down"
-            class="arcana-date-arrow"
-          />
-        </div>
-      </slot>
-    </a-popover>
+
+      </tippy>
+      <div
+        class="time-content"
+        name="tippy01"
+        :title="labelText"
+      >
+        {{ labelText }}
+        <a-icon
+          type="caret-down"
+          class="arcana-date-arrow"
+        />
+      </div>
+    </div>
   </a-config-provider>
 </template>
 
@@ -101,7 +107,7 @@ import AbsoluteTime from "./absolute-time";
 import RealTime from "./real-time";
 import { getTimeType, getLabelText } from "./utils";
 export default {
-  name: "mekkiDataPicker",
+  name: "mekkiDatePicker",
   props: {
     value: {
       type: Array,
@@ -164,6 +170,9 @@ export default {
     },
     //显示隐藏的回调
     visibleChange(visible) {
+      console.log('====================================');
+      console.log(visible);
+      console.log('====================================');
       if (visible) {
         this.findDefaultActiveItem();
       } else {
@@ -218,6 +227,9 @@ export default {
   &:hover {
     border-color: #2977ff;
   }
+  &:focus {
+    outline: 0;
+  }
   .arcana-date-arrow {
     position: absolute;
     right: 10px;
@@ -244,6 +256,7 @@ export default {
           margin-bottom: 0;
         }
         .ant-collapse-header {
+          display: flex;
           background-color: rgba(0, 0, 0, 0.02);
           padding: 9px 16px;
           color: rgba(0, 0, 0, 0.45);

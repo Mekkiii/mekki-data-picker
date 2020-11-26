@@ -49,12 +49,18 @@
             {{ item.label }}
           </a-select-option>
         </a-select>
-        <a-button type="primary" @click="onSubmit">
+        <a-button
+          type="primary"
+          @click="onSubmit"
+        >
           确定
         </a-button>
       </div>
     </div>
-    <div class="error-text" v-show="isError">{{ errorMsg }}</div>
+    <div
+      class="error-text"
+      v-show="isError"
+    >{{ errorMsg }}</div>
   </div>
 </template>
 
@@ -79,7 +85,7 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() { },
 
   methods: {
     onSubmit() {
@@ -162,6 +168,7 @@ export default {
 <style lang="less" scoped>
 .arcana-date-content {
   .custom-time-box {
+    text-align: left;
     display: flex;
     flex-direction: column;
     .start-time-box {

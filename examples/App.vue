@@ -1,38 +1,24 @@
 <template>
-  <!-- <a-config-provider :locale="zhCN"> -->
   <div id="app">
-    <mekkiDataPicker></mekkiDataPicker>
-    <tippy
-      to="tippy01"
-      @init="onTippyInit"
-      @hidden="onHidden"
-      interactive="true"
-      theme="light"
-      :distance="20"
-      watch-props="true"
-    >
-      <div>
-        Can coffee make you a better developer?
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, nulla!
-        Maiores et perferendis eaque, exercitationem praesentium nihil.
-      </p>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
+    1<br>
 
-      <p> Timer: { { timer } } </p>
+    1<br>
+    <mekkiDatePicker></mekkiDatePicker>
 
-      <button @click="timer +=3">
-        Increase
-      </button>
-
-    </tippy>
-
-    <button name="tippy01">
-      Click Me
-    </button>
   </div>
-  <!-- </a-config-provider> -->
 </template>
 
 <script>
@@ -40,15 +26,16 @@
 import zhCN from "ant-design-vue/es/locale/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
+// import tippy from 'tippy.js';
 moment.locale("en");
 export default {
+
   name: 'App',
   data() {
     return {
       zhCN
     }
   },
-
 }
 </script>
 

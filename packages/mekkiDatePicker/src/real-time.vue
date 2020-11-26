@@ -32,11 +32,17 @@
           {{ item.label }}
         </a-select-option>
       </a-select>
-      <a-button type="primary" @click="onSubmit">
+      <a-button
+        type="primary"
+        @click="onSubmit"
+      >
         确定
       </a-button>
     </div>
-    <div class="error-text" v-show="isError">无效的时间</div>
+    <div
+      class="error-text"
+      v-show="isError"
+    >无效的时间</div>
   </div>
 </template>
 
@@ -59,7 +65,7 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() { },
 
   methods: {
     //点击快捷菜单tag事件
@@ -120,6 +126,7 @@ export default {
 .arcana-date-content {
   .quick-select-box {
     margin-bottom: 16px;
+    text-align: left;
     .ant-tag {
       margin-right: 8px;
       margin-bottom: 8px;
