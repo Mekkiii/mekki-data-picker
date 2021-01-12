@@ -1,4 +1,4 @@
-# mekki-time-picker
+# time-time-picker
 
 ## Project setup
 ```
