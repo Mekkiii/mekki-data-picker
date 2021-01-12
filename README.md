@@ -1,5 +1,8 @@
 # time-time-picker
+```
 
+基于tippy.js和antdv封装的时间选择器
+```
 ## Project setup
 ```
 npm install
